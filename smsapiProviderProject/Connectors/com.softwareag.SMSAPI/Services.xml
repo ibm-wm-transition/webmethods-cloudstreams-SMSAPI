@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<rest-connector xmlns="http://www.softwareag.com/cloudstreams/metadata/handler/model">
+    <services>
+        <service xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="RESTServiceType" endpoint="${cn.providerUrl}" name="SendSMS" displayName="SendSMS">
+            <description>SMSAPI is a high quality SMS platform which enables you to integrate any of your applications with our&#xD;
+SMS message sending and receiving system.</description>
+            <documentModel packageName="smsapi" nsName="wmsmsapi.doc" useInlineModel="false"/>
+            <resources>
+                <mappings>
+                    <map isRequired="true" isFixed="true" context="IN" name="username" displayName="username">
+                        <source type="IDATA">cr.username</source>
+                        <target type="PARAMETER">username</target>
+                    </map>
+                    <map isRequired="true" isFixed="true" context="IN" name="password" displayName="password">
+                        <source type="IDATA">cr.password</source>
+                        <target type="PARAMETER">password</target>
+                    </map>
+                </mappings>
+                <resource method="GET" path="/sms.do" name="SendSMS" displayName="SendSMS">
+                    <description>Send SMS. This can be a single SMS, scheduled SMS or Bulk SMS with templates and parameters</description>
+                    <parameters>
+                        <parameter name="username" isRequired="false" style="QUERYSTRING_PARAM"/>
+                        <parameter name="password" isRequired="false" style="QUERYSTRING_PARAM"/>
+                        <parameter name="to" isRequired="false" style="QUERYSTRING_PARAM"/>
+                        <parameter name="group" isRequired="false" style="QUERYSTRING_PARAM"/>
+                        <parameter name="message" isRequired="true" style="QUERYSTRING_PARAM"/>
+                        <parameter name="from" isRequired="false" style="QUERYSTRING_PARAM"/>
+                        <parameter name="encoding" isRequired="false" style="QUERYSTRING_PARAM"/>
+                        <parameter name="flash" isRequired="false" style="QUERYSTRING_PARAM"/>
+                        <parameter name="test" isRequired="false" style="QUERYSTRING_PARAM"/>
+                        <parameter name="details" isRequired="false" style="QUERYSTRING_PARAM"/>
+                        <parameter name="date" isRequired="false" style="QUERYSTRING_PARAM"/>
+                        <parameter name="date_validate" isRequired="false" style="QUERYSTRING_PARAM"/>
+                        <parameter name="datacoding" isRequired="false" style="QUERYSTRING_PARAM"/>
+                        <parameter name="udh" isRequired="false" style="QUERYSTRING_PARAM"/>
+                        <parameter name="allow_duplicates" isRequired="false" style="QUERYSTRING_PARAM"/>
+                        <parameter name="idx" isRequired="false" style="QUERYSTRING_PARAM"/>
+                        <parameter name="check_idx" isRequired="false" style="QUERYSTRING_PARAM"/>
+                        <parameter name="max_parts" isRequired="false" style="QUERYSTRING_PARAM"/>
+                        <parameter name="nounicode" isRequired="false" style="QUERYSTRING_PARAM"/>
+                        <parameter name="normalize" isRequired="false" style="QUERYSTRING_PARAM"/>
+                        <parameter name="fast" isRequired="false" style="QUERYSTRING_PARAM"/>
+                        <parameter name="expiration_date" isRequired="false" style="QUERYSTRING_PARAM"/>
+                        <parameter name="notify_url" isRequired="false" style="QUERYSTRING_PARAM"/>
+                        <parameter name="template" isRequired="false" style="QUERYSTRING_PARAM"/>
+                        <parameter name="param1" isRequired="false" style="QUERYSTRING_PARAM"/>
+                        <parameter name="param2" isRequired="false" style="QUERYSTRING_PARAM"/>
+                        <parameter name="param3" isRequired="false" style="QUERYSTRING_PARAM"/>
+                        <parameter name="param4" isRequired="false" style="QUERYSTRING_PARAM"/>
+                    </parameters>
+                    <responses>
+                        <response name="response" code="200" messageFormatterType="vnd.sag.cloudstreams+binary" documentRef="wmsmsapi.doc:SMSResponse" excludeRoot="false"/>
+                    </responses>
+                </resource>
+            </resources>
+        </service>
+        <service xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="RESTServiceType" endpoint="${cn.providerUrl}" name="CheckBalance" displayName="CheckBalance">
+            <description>Current account balance may be checked using one of the extended function.</description>
+            <documentModel packageName="smsapi" nsName="wmsmsapi.doc" useInlineModel="false"/>
+            <resources>
+                <mappings>
+                    <map isRequired="true" isFixed="true" context="IN" name="username" displayName="username">
+                        <source type="IDATA">cr.username</source>
+                        <target type="PARAMETER">username</target>
+                    </map>
+                    <map isRequired="true" isFixed="true" context="IN" name="password" displayName="password">
+                        <source type="IDATA">cr.password</source>
+                        <target type="PARAMETER">password</target>
+                    </map>
+                </mappings>
+                <resource method="GET" path="/user.do" name="CheckBalance" displayName="CheckBalance">
+                    <description>Check account balance</description>
+                    <parameters>
+                        <parameter name="username" isRequired="false" style="QUERYSTRING_PARAM"/>
+                        <parameter name="password" isRequired="false" style="QUERYSTRING_PARAM"/>
+                        <parameter name="credits" isRequired="true" style="QUERYSTRING_PARAM"/>
+                    </parameters>
+                    <responses>
+                        <response name="Response1" code="200" messageFormatterType="vnd.sag.cloudstreams+binary" documentRef="wmsmsapi.doc:SMSResponse" excludeRoot="false"/>
+                    </responses>
+                </resource>
+            </resources>
+        </service>
+    </services>
+</rest-connector>

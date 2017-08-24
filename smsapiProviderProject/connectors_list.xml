@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:ConnectorList xmlns:ns2="http://cloudstreams.com/connector">
+    <Connector>
+        <name>SMSAPI.com Provider</name>
+        <uuid>com.softwareag.SMSAPI</uuid>
+        <version>0.1</version>
+    </Connector>
+    <ProviderPackage>smsapi</ProviderPackage>
+    <Description>SMSAPI.com CloudStreams Provider</Description>
+    <Publisher>Software AG</Publisher>
+</ns2:ConnectorList>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<IDataXMLCoder version="1.0">
+  <record javaclass="com.wm.util.Values">
+    <value name="interface">wmsmsapi.doc</value>
+    <value name="package">smsapi</value>
+    <array name="nodeList" type="record" depth="1">
+      <record javaclass="com.wm.data.ISMemDataImpl">
+        <value name="node_nsName">wmsmsapi.doc:SMSResponse</value>
+        <number name="LOCK_STATUS" type="java.lang.Integer">3</number>
+        <value name="node_pkg">smsapi</value>
+        <idataportable name="node_type" javaclass="com.wm.lang.ns.NSType">
+          <value name="type_name">record</value>
+          <value name="subtype_name">unknown</value>
+        </idataportable>
+        <null name="eventDescription"/>
+        <jboolean name="field_is_xml_content">false</jboolean>
+        <number name="role" type="java.lang.Byte">0</number>
+        <jboolean name="NotificationDocument">false</jboolean>
+      </record>
+    </array>
+  </record>
+</IDataXMLCoder>
