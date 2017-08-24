@@ -1,5 +1,8 @@
 # webMethods CloudStreams Provider for SMSAPI.com
 This project provides a sample webMethods CloudStreams Provider Project for SMSAPI.com. The following APIs are available:
+* **Send SMS:** SMSAPI is a high quality SMS platform which enables you to integrate any of your applications with our
+SMS message sending and receiving system. https://www.smsapi.com/assets/files/SMSAPI_http_en.pdf
+* **Check Balance:**: Current account balance may be checked using one of the extended function. https://www.smsapi.com/assets/files/SMSAPI_http_en.pdf
 
 ## Requirements
 
